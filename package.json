@@ -1,6 +1,6 @@
 {
   "name": "gen-subs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI tool to generate subtitles from audio and video files and then either burn them in or add them as a separate track.",
   "main": "./dist/cli.js",
   "type": "module",
