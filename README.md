@@ -2,6 +2,8 @@
 
 This project uses on-device machine learning models to generate subtitles for your videos.
 
+https://github.com/TejasQ/gen-subs/assets/9947422/6ed50e1d-05a9-4d9d-ac6f-a4eae0455e35
+
 ## Features
 
 - 🔒 **Secure and offline** - All machine learning models are downloaded and run locally on your device. No data is sent to any server. There is zero dependency on OpenAI or other cloud services.
