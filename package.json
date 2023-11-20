@@ -1,0 +1,56 @@
+{
+  "name": "gen-subs",
+  "version": "1.0.0",
+  "description": "A CLI tool to generate subtitles from audio and video files and then either burn them in or add them as a separate track.",
+  "main": "./dist/cli.js",
+  "type": "module",
+  "bin": {
+    "gen-subs": "./dist/cli.js"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsup-node ./cli.ts --format cjs,esm --out-dir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "machine learning",
+    "ai",
+    "artificial intelligence",
+    "subtitles",
+    "video subtitles",
+    "closed captions",
+    "accessibility"
+  ],
+  "author": {
+    "name": "Tejas Kumar",
+    "email": "tejas@tejas.qa"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "cli-progress": "^3.12.0",
+    "commander": "^11.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "inquirer": "^9.2.12",
+    "mkdirp": "^3.0.1",
+    "ora": "^7.0.1",
+    "subtitle": "^4.2.1",
+    "vosk": "^0.3.39",
+    "wav": "^1.0.2",
+    "yauzl": "^2.10.0"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.5",
+    "@types/fluent-ffmpeg": "^2.1.24",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.9.1",
+    "@types/vosk": "link:../../DefinitelyTyped/types/vosk",
+    "@types/wav": "^1.0.4",
+    "@types/yauzl": "^2.10.3",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.0"
+  }
+}
