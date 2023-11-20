@@ -40,6 +40,7 @@ program
     .option(
         '-h --highlight [color]',
         "(`ass` subtitles only) Highlight the active word with a color. (Default `#048BA8`)",
+        "#048BA8"
     )
     .action(forAction);
 

@@ -52,7 +52,7 @@ This project has a few options that you can use to customize your subtitles. Let
 | \`-e, --embed\`             | Whether to embed subtitles in the video's metadata.                                                              | None                                       |
 | \`-o, --out-dir [path]\`    | Where to output the subtitle and final video files.                                                              | \`/Users/tejas/Sites/commander-to-readme\` |
 | \`-f, --format [format]\`   | Choose between \`srt\` or \`ass\` formats. `ass` lets you do more cool stuff like focus words. (Default \`srt\`) | \`srt\`                                    |
-| \`-h --highlight [color]\`  | (\`ass\` subtitles only) Highlight the active word with a color. (Default \`#048BA8\`)                           | None                                       |
+| \`-h --highlight [color]\`  | (\`ass\` subtitles only) Highlight the active word with a color.                                                 | `#048BA8`                                  |
 
 ## Contributing
 
