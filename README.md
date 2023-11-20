@@ -2,7 +2,7 @@
 
 This project uses on-device machine learning models to generate subtitles for your videos.
 
-https://github.com/TejasQ/gen-subs/assets/9947422/6ed50e1d-05a9-4d9d-ac6f-a4eae0455e35
+https://github.com/TejasQ/gen-subs/assets/9947422/9f080b98-b35a-40cf-96c2-d1f481f25105
 
 ## Features
 
