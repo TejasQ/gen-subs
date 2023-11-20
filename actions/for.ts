@@ -5,7 +5,7 @@ import ora from "ora";
 import inquirer from "inquirer";
 
 import { splitFilePath } from "../splitFilePath";
-import { formatSize, models, videoExtensions, workingDir } from "../util";
+import { formatSize, getModelDir, models, videoExtensions, workingDir } from "../util";
 import { extractAudio } from "../extractAudio";
 import { processAudio } from "../processAudio";
 import { createTextFromAudioFile } from "../createTextFromAudioFile";
@@ -80,7 +80,7 @@ export async function forAction(relativeTarget: string, options: Options) {
   spinner.text = "Processing audio...";
   const processedAudioFilePath = await processAudio(audioFilePath);
   spinner.text = "Checking available models..."
-  const availableModels = (await readdir(join(workingDir, "models"))).filter(dir => models.map(m => m.name).includes(dir));
+  const availableModels = (await readdir(await getModelDir())).filter(dir => models.map(m => m.name).includes(dir));
   let model;
 
   spinner.stop();
@@ -112,7 +112,7 @@ export async function forAction(relativeTarget: string, options: Options) {
       const modelPath = join(workingDir, "models", models[0].name);
       const zipFile = await downloadFile(models[0].url, modelPath, models[0].notes);
       spinner.start("Unzipping model...");
-      await unzipFile(zipFile, join(workingDir, "models"));
+      await unzipFile(zipFile, await getModelDir());
       spinner.succeed("Model downloaded.");
       model = models[0].name;
     }

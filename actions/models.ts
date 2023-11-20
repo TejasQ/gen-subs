@@ -4,7 +4,7 @@ import { rimraf } from "rimraf"
 import { lstat } from "fs/promises";
 import { join } from "path";
 
-import { formatSize, isModelDownloaded, models, workingDir } from "../util";
+import { formatSize, getModelDir, isModelDownloaded, models, workingDir } from "../util";
 import { downloadFile, unzipFile } from "../downloadAndUnzip";
 
 export async function modelsAction() {
@@ -50,7 +50,7 @@ export async function modelsAction() {
             spinner.stop();
             const zipFilePath = await downloadFile(choice.url, join(workingDir, "models", choice.value), choice.notes);
             spinner.start(`Unzipping model ${choice.value}...`);
-            await unzipFile(zipFilePath, join(workingDir, "models"));
+            await unzipFile(zipFilePath, await getModelDir());
         }
     }
 

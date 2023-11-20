@@ -2,6 +2,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { tmpdir } from 'os';
 import { lstat } from 'fs/promises';
+import { mkdirp } from 'mkdirp';
 
 type Model = {
   "language": string
@@ -27,6 +28,15 @@ export const audioExtensions = [
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
 export const workingDir = join(tmpdir(), "gen-subs")
+export const getModelDir = async () => {
+  try {
+    await lstat(join(workingDir, "models"))
+    return join(workingDir, "models")
+  } catch {
+    await mkdirp(join(workingDir, "models"))
+    return join(workingDir, "models")
+  }
+}
 
 export const isModelDownloaded = async (name: string) => {
   return await lstat(join(workingDir, "models", name))

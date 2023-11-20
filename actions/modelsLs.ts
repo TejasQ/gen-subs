@@ -1,12 +1,11 @@
 import { readdir } from "fs/promises";
 import ora from "ora";
-import { join } from "path";
-import { formatSize, models, workingDir } from "../util";
+import { formatSize, getModelDir, models } from "../util";
 
 export async function modelsLs() {
     const spinner = ora().start("Getting models...");
     try {
-        const modelsOnDisk = await readdir(join(workingDir, "models"))
+        const modelsOnDisk = await readdir(await getModelDir())
         const filteredModels = modelsOnDisk.filter(model => models.find(m => m.name === model));
 
         if (!filteredModels.length) {
