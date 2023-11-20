@@ -46,7 +46,7 @@ This will have you choose a language and then show you a collection of models, t
 
 ## API
 
-This project has a few options that you can use to customize your subtitles. Let's enumerate them here:
+This project has a few options that you can use to customize your subtitles. Let's enumerate them here. Each command comes after `npx gen-subs` and is followed by a list of options.
 
 | Command        | Description                                         |
 | -------------- | --------------------------------------------------- |
