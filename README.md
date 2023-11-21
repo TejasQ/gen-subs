@@ -44,6 +44,14 @@ npx gen-subs models
 
 This will have you choose a language and then show you a collection of models, their sizes, and intended use cases (like podcasting, content, etc.). You can then choose a model and download it. Once downloaded, you can use it to generate subtitles for your video. You only download models once, and can remove them any time by running `npx gen-subs models purge`. You can also list all your downloaded models by running `npx gen-subs models ls`.
 
+### Other Languages
+
+You can install a wide variety of models that can "hear" different languages. To generate subs for any language, follow these steps:
+
+1. First, install a model with `npx gen-subs models`. You will be asked to choose a language here.
+2. Then, run `npx gen-subs for ./your/video.mp4` to generate subtitles for your video, You will be asked which model to use.
+3. Enjoy!
+
 ## API
 
 This project has a few options that you can use to customize your subtitles. Let's enumerate them here. Each command comes after `npx gen-subs` and is followed by a list of options.
