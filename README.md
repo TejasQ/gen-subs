@@ -72,4 +72,4 @@ Please feel free to open issues and pull requests as needed and I'll try to get 
 
 ## Sustainability
 
-This is all free and open source software. If it has helped you, please consider [sponsoring me project on GitHub](https://github.com/sponsors/TejasQ) so I can make more stuff like this and teach about it full-time.
+This is all free and open source software. If it has helped you, please consider [sponsoring me on GitHub](https://github.com/sponsors/TejasQ) so I can make more stuff like this and teach about it full-time.
