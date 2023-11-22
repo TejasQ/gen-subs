@@ -55,23 +55,42 @@ export function createAssFromRecognitionResults(results: RecognitionResults[], h
         throw new Error("No words identified to create subtitles from.");
     }
 
-    results.forEach(r => {
-        r.result.forEach((word, i) => {
-            const startTime = formatTime(word.start);
-            const endTime = formatTime(word.end);
-            const textBefore = r.result.slice(Math.max(0, i - 5), i).map(w => w.word).join(' ');
+    let previousEndTime = 0;
+
+    for (let r = 0; r < results.length; r++) {
+        for (let i = 0; i < results[r].result.length; i++) {
+            const word = results[r].result[i];
+            let startTime = Math.max(word.start, previousEndTime); // Start time is either the word start time or the end of the previous subtitle, whichever is later
+            let endTime = word.end;
+
+            // Extend endTime to be at least 1 second, but avoid overlapping with the start of the next word
+            endTime = Math.max(endTime, startTime + 1); // Ensure at least 1 second duration
+            if (i < results[r].result.length - 1) {
+                const nextWordStart = results[r].result[i + 1].start;
+                if (endTime > nextWordStart) {
+                    endTime = nextWordStart; // Adjust to prevent overlap with the next word
+                }
+            }
+
+            previousEndTime = endTime; // Update previousEndTime for the next iteration
+
+            // Format times for the subtitle
+            const formattedStartTime = formatTime(startTime);
+            const formattedEndTime = formatTime(endTime);
+
+            // Prepare text for the subtitle line
+            const textBefore = results[r].result.slice(Math.max(0, i - 5), i).map(w => w.word).join(' ');
             const highlightedWord = generateHighlightedWord(word.word, {
                 backgroundColor: highlightColor,
                 color: '#ffffff',
                 box: true,
             });
-            const textAfter = r.result.slice(i + 1, i + 6).map(w => w.word).join(' ');
+            const textAfter = results[r].result.slice(i + 1, i + 6).map(w => w.word).join(' ');
             const lineText = textBefore + ' ' + highlightedWord + ' ' + textAfter;
 
-            dialogues += `Dialogue: 0,${startTime},${endTime},Default,,0,0,0,,${lineText.trim()}\n`;
-        });
-
-    })
+            dialogues += `Dialogue: 0,${formattedStartTime},${formattedEndTime},Default,,0,0,0,,${lineText.trim()}\n`;
+        }
+    }
     return `${generateAssHeader()}
 ${dialogues}`;
 }
