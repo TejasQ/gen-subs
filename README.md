@@ -56,12 +56,14 @@ You can install a wide variety of models that can "hear" different languages. To
 
 This project has a few options that you can use to customize your subtitles. Let's enumerate them here. Each command comes after `npx gen-subs` and is followed by a list of options.
 
-| Command        | Description                                         |
-| -------------- | --------------------------------------------------- |
-| `for`          | Generate subtitles for a given video or audio file. |
-| `models`       | Manage models                                       |
-| `models purge` | Delete all downloaded models.                       |
-| `models ls`    | Show a list of all models downloaded to the system. |
+| Command                              | Description                                                          |
+| ------------------------------------ | -------------------------------------------------------------------- |
+| `for <mediaFile>`                    | Generate subtitles for a given video or audio file.                  |
+| `models`                             | Manage models                                                        |
+| `models purge`                       | Delete all downloaded models.                                        |
+| `models ls`                          | Show a list of all models downloaded to the system.                  |
+| `burn-in <videoFile> <subtitleFile>` | Burns subtitles into the video and gives you a new video.            |
+| `embed <videoFile> <subtitleFile>`   | Adds subtitles to the video's metadata but does not alter the video. |
 
 ### `gen-subs for [media]`
 

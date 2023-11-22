@@ -6,6 +6,8 @@ import { forAction } from "./actions/for";
 import { modelsAction } from "./actions/models";
 import { modelsPurgeAction } from "./actions/modelsPurge";
 import { modelsLs } from "./actions/modelsLs";
+import { burnInAction } from "./actions/burnIn";
+import { embedAction } from "./actions/embed";
 
 program.name(pkg.name).description(pkg.description).version(pkg.version);
 
@@ -57,6 +59,16 @@ models.command("ls")
         "Show a list of all models downloaded to the system.",
     )
     .action(modelsLs);
+
+program
+    .command("burn-in <video> <subtitles>")
+    .description("Burn subtitles into a video. Video is output in the same directiory with a suffix added.")
+    .action(burnInAction);
+
+program
+    .command("embed <video> <subtitles>")
+    .description("Embed subtitles to a video. Video is output in the same directiory with a suffix added.")
+    .action(embedAction);
 
 program.parse(process.argv);
 
