@@ -65,14 +65,14 @@ This project has a few options that you can use to customize your subtitles. Let
 
 ### `gen-subs for [media]`
 
-| Option                    | Description                                                                                                | Default                       |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| `-m, --model [modelName]` | The name of the machine learning model you'd like to use to generate subtitles.                            | `vosk-model-small-en-us-0.15` |
-| `-b, --burn-in`           | Whether to layer subtitles atop the video (burn them in).                                                  | None                          |
-| `-e, --embed`             | Whether to embed subtitles in the video's metadata.                                                        | None                          |
-| `-o, --out-dir [path]`    | Where to output the subtitle and final video files.                                                        | `process.cwd()`               |
-| `-f, --format [format]`   | Choose between `srt` or `ass` formats. `ass` lets you do more cool stuff like focus words. (Default `srt`) | `srt`                         |
-| `-h --highlight [color]`  | (`ass` subtitles only) Highlight the active word with a color.                                             | `#048BA8`                     |
+| Option                    | Description                                                                                                                                                         | Default                       |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| `-m, --model [modelName]` | The name of the machine learning model you'd like to use to generate subtitles.                                                                                     | `vosk-model-small-en-us-0.15` |
+| `-b, --burn-in`           | Whether to layer subtitles atop the video (burn them in).                                                                                                           | None                          |
+| `-e, --embed`             | Whether to embed subtitles in the video's metadata.                                                                                                                 | None                          |
+| `-o, --out-dir [path]`    | Where to output the subtitle and final video files.                                                                                                                 | `process.cwd()`               |
+| `-f, --format [format]`   | Choose between `srt` or `ass` formats. `ass` lets you do more cool stuff like focus words. (Default `srt`)                                                          | `srt`                         |
+| `-h --highlight [color]`  | (`ass` subtitles only) Highlight the active word with a color. ⚠️ Use double quotes (`""`) when entering hex codes into your terminal because `#` starts a comment! | `"#048BA8"`                   |
 
 ## Contributing
 
