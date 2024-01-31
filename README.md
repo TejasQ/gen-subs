@@ -24,6 +24,13 @@ https://github.com/TejasQ/gen-subs/assets/9947422/bc8df523-b62a-4123-a62d-2df178
 - 🎧 **Multi-modal** - Supports both audio and video files and generates subtitles for each.
 - 📊 **Multi-model** - Choose from a variety of machine learning models ranging from 40MB to >2GB in size. The larger the model, the more accurate the subtitles, but smaller models are also quite capable.
 
+## Prerequisites
+
+### On Windows
+You need to install the latest version of Visual Studio including the "Desktop development with C++" workload. This is a requirement from node-gyp which is needed for running gen-subs. 
+
+It's available at https://visualstudio.microsoft.com/downloads
+
 ## Usage
 
 You can generate subtitles for any video using the following command:
