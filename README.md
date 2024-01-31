@@ -24,6 +24,16 @@ https://github.com/TejasQ/gen-subs/assets/9947422/bc8df523-b62a-4123-a62d-2df178
 - 🎧 **Multi-modal** - Supports both audio and video files and generates subtitles for each.
 - 📊 **Multi-model** - Choose from a variety of machine learning models ranging from 40MB to >2GB in size. The larger the model, the more accurate the subtitles, but smaller models are also quite capable.
 
+## Installation
+
+To install gen-subs globally, run the following command :
+
+```bash
+npm i -g gen-subs
+```
+
+It's also possible to install it on a per project basis by omitting the -g flag.
+
 ## Usage
 
 You can generate subtitles for any video using the following command:
