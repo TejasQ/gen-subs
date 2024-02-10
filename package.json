@@ -37,10 +37,11 @@
     "inquirer": "^9.2.12",
     "mkdirp": "^3.0.1",
     "ora": "^7.0.1",
+    "rimraf": "^5.0.5",
     "subtitle": "^4.2.1",
+    "typescript": "^5.3.3",
     "vosk": "^0.3.39",
     "wav": "^1.0.2",
-    "rimraf": "^5.0.5",
     "yauzl": "^2.10.0"
   },
   "devDependencies": {

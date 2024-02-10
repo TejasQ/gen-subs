@@ -1,13 +1,14 @@
 import ffmpeg from "fluent-ffmpeg";
 import ffmpegInstaller from "@ffmpeg-installer/ffmpeg";
 import { join } from "path";
+import path from "path";
 import { workingDir } from "./util";
 
 ffmpeg.setFfmpegPath(ffmpegInstaller.path);
 
 export function processAudio(inputPath: string): Promise<string> {
-  const fileName = inputPath.split("/").pop() ?? "";
-  const fileNameWithoutExtension = fileName.split(".")[0];
+  const fileName = path.basename(inputPath);
+  const fileNameWithoutExtension = path.basename(inputPath , path.extname(fileName));
   const outputPath = join(
     workingDir, "from-video", `${Date.now()}-${fileNameWithoutExtension}.wav`,
   );

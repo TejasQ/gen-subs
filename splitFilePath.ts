@@ -1,6 +1,8 @@
+import path from "path";
+
 export function splitFilePath(filePath: string) {
   // Extract the base name (the last part of the path)
-  const baseName = filePath.split("/").pop();
+  const baseName = path.basename(filePath);;
 
   if (!baseName) throw new Error("Invalid file path");
 
