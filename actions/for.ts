@@ -1,4 +1,5 @@
 import { join } from "path";
+import path from "path";
 import { lstat, readdir, writeFile } from "fs/promises";
 import { mkdirp } from "mkdirp";
 import ora from "ora";
@@ -24,7 +25,7 @@ type Options = {
 };
 
 export async function forAction(relativeTarget: string, options: Options) {
-  const target = relativeTarget.startsWith('/') ? relativeTarget : join(process.cwd(), relativeTarget);
+  const target = path.resolve(relativeTarget);
   const { pathWithoutExtension, fileName } = splitFilePath(target);
   const format = (options.format ?? "srt").toLowerCase()
 
