@@ -62,6 +62,7 @@ export const createTextFromAudioFile = (
           results.push(result);
         }
       }
+	  results.push(recognizer.finalResult());
       spinner.clear();
       recognizer.free();
       model.free();
